@@ -35,6 +35,7 @@
 
 @class PSMOverflowPopUpButton, PSMRolloverButton, PSMTabBarCell, PSMTabBarController;
 @protocol PSMTabStyle;
+@protocol PSMTabBarControlDelegate;
 
 typedef enum {
 	PSMTabBarHorizontalOrientation,
@@ -163,8 +164,8 @@ enum {
 // accessors
 - (NSTabView *)tabView;
 - (void)setTabView:(NSTabView *)view;
-- (id)delegate;
-- (void)setDelegate:(id)object;
+- (id<PSMTabBarControlDelegate>)delegate;
+- (void)setDelegate:(id<PSMTabBarControlDelegate>)object;
 - (id)partnerView;
 - (void)setPartnerView:(id)view;
 
@@ -189,8 +190,8 @@ enum {
 @end
 
 
-@interface NSObject (TabBarControlDelegateMethods)
-
+@protocol PSMTabBarControlDelegate <NSObject>
+@optional
 //Standard NSTabView methods
 - (BOOL)tabView:(NSTabView *)aTabView shouldCloseTabViewItem:(NSTabViewItem *)tabViewItem;
 - (void)tabView:(NSTabView *)aTabView didCloseTabViewItem:(NSTabViewItem *)tabViewItem;
