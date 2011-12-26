@@ -190,7 +190,7 @@ enum {
 @end
 
 
-@protocol PSMTabBarControlDelegate <NSObject>
+@protocol PSMTabBarControlDelegate <NSTabViewDelegate>
 @optional
 //Standard NSTabView methods
 - (BOOL)tabView:(NSTabView *)aTabView shouldCloseTabViewItem:(NSTabViewItem *)tabViewItem;
