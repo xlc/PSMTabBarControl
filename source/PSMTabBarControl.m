@@ -14,6 +14,7 @@
 #import "PSMMetalTabStyle.h"
 #import "PSMTabDragAssistant.h"
 #import "PSMTabBarController.h"
+#import "PSMSequelProTabStyle.h"
 
 @interface PSMTabBarControl (Private)
 
@@ -133,7 +134,7 @@
     _cellMaxWidth = 280;
     _cellOptimumWidth = 130;
 	_tearOffStyle = PSMTabBarTearOffAlphaWindow;
-	style = [[PSMMetalTabStyle alloc] init];
+	style = [[PSMSequelProTabStyle alloc] init];
     
     // the overflow button/menu
     NSRect overflowButtonRect = NSMakeRect([self frame].size.width - [style rightMarginForTabBarControl] + 1, 0, [style rightMarginForTabBarControl] - 1, [self frame].size.height);
